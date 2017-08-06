@@ -2,7 +2,7 @@
 
 const init = () => {
 
-  console.log(`Hello, spekken`)
+  console.log(`Hello, spekken`);
 
 };
 
