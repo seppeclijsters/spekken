@@ -18,3 +18,45 @@ header {
 h1 {
   font-size: 3rem;
 }
+
+.theater {
+  display: flex;
+}
+
+.theater_leftcurtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: #fd3747;
+  clip-path: ellipse(50% 120% at 0% 0%);
+  animation: theater1 3s 1s forwards;
+  background-image: url(../assets/img/texture.png);
+}
+
+.theater_rightcurtain {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: #fd3747;
+  clip-path: ellipse(50% 120% at 100% 00%);
+  animation: theater2 3s 1s forwards;
+  background-image: url(../assets/img/texture.png);
+}
+
+@keyframes theater1 {
+
+  0% { clip-path: ellipse(50% 120% at 0% 0%); }
+
+  100% { clip-path: ellipse(0% 120% at 0% 0%); }
+}
+
+@keyframes theater2 {
+
+  0% { clip-path: ellipse(50% 120% at 100% 00%); }
+
+  100% { clip-path: ellipse(0% 120% at 100% 0%); }
+}

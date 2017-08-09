@@ -120,6 +120,35 @@ class EventsController extends Controller {
       );
     }
 
+    if (!empty($_POST['period']) && $_POST['period'] == 'Paasperiode') {
+      echo $_POST['period'];
+      $conditions[] = array(
+        'field' => 'start',
+        'comparator' => '>=',
+        'value' => '2018-04-12 00:00:00'
+      );
+
+      $conditions[] = array(
+        'field' => 'start',
+        'comparator' => '<=',
+        'value' => '2018-04-20 23:59:59'
+      );
+    }
+
+    if (!empty($_POST['period']) && $_POST['period'] == 'Kerstperiode') {
+      $conditions[] = array(
+        'field' => 'start',
+        'comparator' => '>=',
+        'value' => '2017-12-27 00:00:00'
+      );
+
+      $conditions[] = array(
+        'field' => 'start',
+        'comparator' => '<=',
+        'value' => '2018-01-06 23:59:59'
+      );
+    }
+
     // $conditions[] = array(
     //   'field' => 'start_age',
     //   'comparator' => '>=',

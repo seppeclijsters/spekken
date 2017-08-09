@@ -21,6 +21,22 @@
 							<option value="12">12</option>
 						</optgroup>
 	</select> -->
+  <label for="period">Periode</label>
+  <select name="period" id="period">
+  <?php
+  $periods = ["Kerstperiode", "Paasperiode"];
+  $current_period = $_POST['period'];
+
+  foreach($periods as $period) {
+      if($period == $current_period) {
+          echo '<option value="'.$period.'" selected="selected">'.$period.'</option>';
+        } else {
+          echo '<option value="'.$period.'">'.$period.'</option>';
+      }
+  }
+  ?>
+  </select>
+  <label for="age">Leeftijd</label>
   <select name="age" id="age">
   <?php
   $ages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -45,6 +61,7 @@
     <article>
       <header><h2><?php echo $event['title']; ?></h2></header>
       <dl>
+        <dt><img src="../../assets/img/<?php echo $event['id']?>.jpg" alt=""></dd>
         <dt>start</dt><dd><?php echo $event['start'];?></dd>
         <dt>leeftijd</dt><dd><?php echo $event['start_age'];?> - <?php echo $event['end_age'];?> jaar</dd>
         <dt>performer</dt><dd><?php echo $event['performer'];?></dd>
