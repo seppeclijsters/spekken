@@ -104,6 +104,22 @@ class EventsController extends Controller {
   public function programm() {
     $conditions = array();
 
+    if (!empty($_POST['age'])) {
+      $age = $_POST['age'];
+      echo $_POST['age'];
+      $conditions[] = array(
+        'field' => 'start_age',
+        'comparator' => '<=',
+        'value' => $age
+      );
+
+      $conditions[] = array(
+        'field' => 'end_age',
+        'comparator' => '>=',
+        'value' => $age
+      );
+    }
+
     // $conditions[] = array(
     //   'field' => 'start_age',
     //   'comparator' => '>=',
