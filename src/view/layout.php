@@ -7,7 +7,6 @@
     <meta name="description" content="Spekken, kindertheaterfestival"/>
     <meta name="keywords" content="Spekken, Gent, kindertheaterfestival, paasvakantie, kerstvakantie"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- <?php echo $css;?> -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
   </head>

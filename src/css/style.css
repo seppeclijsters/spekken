@@ -1,5 +1,5 @@
-@import 'reset';
-@import 'vars';
+/*@import 'reset';
+@import 'vars';*/
 
 html {
   background-color: var(--bg-color);
@@ -19,8 +19,18 @@ h1 {
   font-size: 3rem;
 }
 
+.test {
+  position: fixed;
+  background-image: url(../assets/img/header.jpg);
+  width: 500px;
+  height: 700px;
+  background-color: red;
+}
+
 .theater {
   display: flex;
+  background-image: url(../assets/img/header.jpg);
+  background-size: 100% 900px;
 }
 
 .theater_leftcurtain {

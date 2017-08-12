@@ -168,12 +168,19 @@ class EventsController extends Controller {
   public function detail(){
     $event = false;
 		if(!empty($_GET['id'])) {
-				$event = $this->eventDAO->selectById($_GET['id']);
-				$this->set('event', $event);
-		}
-    if(empty($event)) {
-			$_SESSION['error'] = 'this event does not exist';
-			$this->redirect('index.php?page=program');
+
+      if($_GET['id'] < 3 ) {
+        $this->redirect('index.php?page=detail&id=29');
+		  }
+
+      else if($_GET['id'] > 29 ) {
+        $this->redirect('index.php?page=detail&id=3');
+      }
+
+      else if(!empty($_GET['id'])) {
+      $event = $this->eventDAO->selectById(($_GET['id']));
+      $this->set('event', $event);
+    }
 		}
   }
 

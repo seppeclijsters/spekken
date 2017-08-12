@@ -2,3 +2,6 @@
   <div class="theater_leftcurtain"></div>
   <div class="theater_rightcurtain"></div>
 </div>
+
+<div class="test">
+</div>
