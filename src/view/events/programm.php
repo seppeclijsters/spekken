@@ -56,21 +56,18 @@
 </form>
 
 <section>
-  <h1>Events</h1>
-  <?php foreach($events as $event): ?>
-    <article>
-      <header><h2><?php echo $event['title']; ?></h2></header>
-      <dl>
-        <dt><img src="../../assets/img/<?php echo $event['id']?>.jpg" alt=""></dd>
-        <dt>start</dt><dd><?php echo $event['start'];?></dd>
-        <dt>leeftijd</dt><dd><?php echo $event['start_age'];?> - <?php echo $event['end_age'];?> jaar</dd>
-        <dt>performer</dt><dd><?php echo $event['performer'];?></dd>
-        <dt>title</dt><dd><?php echo $event['title'];?></dd>
-        <dt>location</dt><dd><?php echo $event['location'];?></dd>
-        <dt>tags</dt><dd><ul><?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?></ul></dd>
-        <dt>description</dt><dd><pre><?php echo $event['description'];?></pre></dd>
-        <?php echo '<a class="program_event_extra" href=index.php?page=detail&id=' . $event['id'] . '>' ?>Meer Info -></a>
-      </dl>
+  <div class="programm">
+    <?php foreach($events as $event): ?>
+    <article class="programm__event">
+      <picture>
+          <source class="event__picture" type="image/webp" src="../../assets/img/<?php echo $event['id']?>.jpg" alt="">
+          <img class="event__picture" src="../../assets/img/<?php echo $event['id']?>.jpg" alt="">
+      </picture>
+      <div class="event__title"><h2><?php echo $event['title']; ?></h2></header></div>
+      <div class="event__start"> <?php echo $event['start'];?> </div>
+      <div class="event__age"><?php echo $event['start_age'];?> - <?php echo $event['end_age'];?> jaar</div>
+      <?php echo '<a class="program_event_extra" href=index.php?page=detail&id=' . $event['id'] . '>' ?>Meer Info -></a>
     </article>
-  <? endforeach;?>
+    <? endforeach;?>
+  </div>
 </section>

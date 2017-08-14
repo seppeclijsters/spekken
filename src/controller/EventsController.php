@@ -180,6 +180,12 @@ class EventsController extends Controller {
       else if(!empty($_GET['id'])) {
       $event = $this->eventDAO->selectById(($_GET['id']));
       $this->set('event', $event);
+
+      $eventbefore = $this->eventDAO->selectById(($_GET['id']-1));
+      $this->set('eventbefore', $eventbefore);
+
+      $eventafter = $this->eventDAO->selectById(($_GET['id']+1));
+      $this->set('eventafter', $eventafter);
     }
 		}
   }

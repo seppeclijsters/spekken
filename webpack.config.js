@@ -13,7 +13,7 @@ const extractCSS = new ExtractTextWebpackPlugin(`css/style.css`);
 // change for production build on different server path
 const publicPath = `/`;
 
-const port = 7777;
+const port = 3000;
 
 // hard copy assets folder for:
 // - srcset images (not loaded through html-loader )
