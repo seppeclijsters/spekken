@@ -3,6 +3,6 @@
   font-style: normal;
   font-weight: 400;
   src:
-    url(jaapokki.woff) format('woff'),
-    url(jaapokki.woff2) format('woff2');
+    url(jaapokki-regular.woff) format('woff'),
+    url(jaapokki-regular.woff2) format('woff2');
 }

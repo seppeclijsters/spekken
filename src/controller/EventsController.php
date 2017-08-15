@@ -149,6 +149,21 @@ class EventsController extends Controller {
       );
     }
 
+    if (!empty($_POST['date'])) {
+      $date1 = $_POST['date'] . ' 00:00:00';
+      $date2 = $_POST['date'] . ' 23:59:59';
+      $conditions[] = array(
+        'field' => 'start',
+        'comparator' => '>=',
+        'value' => $date1
+      );
+      $conditions[] = array(
+        'field' => 'start',
+        'comparator' => '<=',
+        'value' => $date2
+      );
+    }
+
     // $conditions[] = array(
     //   'field' => 'start_age',
     //   'comparator' => '>=',
@@ -180,6 +195,9 @@ class EventsController extends Controller {
       else if(!empty($_GET['id'])) {
       $event = $this->eventDAO->selectById(($_GET['id']));
       $this->set('event', $event);
+
+      $location = $this->eventDAO->selectLocationById(($_GET['id']));
+      $this->set('location', location);
 
       $eventbefore = $this->eventDAO->selectById(($_GET['id']-1));
       $this->set('eventbefore', $eventbefore);
