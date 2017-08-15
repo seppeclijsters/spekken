@@ -72,4 +72,3 @@
     </article>
     <? endforeach;?>
 </section>
-</section>

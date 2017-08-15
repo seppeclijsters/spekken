@@ -65,7 +65,7 @@ class EventsController extends Controller {
     $conditions[] = array(
       'field' => 'start',
       'comparator' => '<',
-      'value' => '2018-01-31 23:59:59'
+      'value' => '2017-12-27 23:59:59'
     );
 
     //example: events on januari 6

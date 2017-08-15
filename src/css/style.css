@@ -43,8 +43,8 @@ h1 {
 
 .theater__picture {
   width: 100%;
-  height: auto;
-  background-size: contain;
+  max-height: 80rem;
+  object-fit: cover;
 }
 
 .theater__leftcurtain {
@@ -129,6 +129,111 @@ h1 {
       font-size: 3rem;
     }
   }
+}
+
+.explore {
+  width: 960px;
+  margin: auto;
+  margin-top: 10rem;
+
+  &__title {
+    font-family: jaapokki;
+  }
+
+  &__events {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+.event {
+  display: flex;
+  border-radius: 1rem;
+  border: .3rem solid var(--red);
+  padding: 1rem;
+  margin-top: 3rem;
+
+  &__picture {
+    border-radius: .7rem;
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+  }
+}
+
+.event__info {
+
+  &__title {
+    font-family: jaapokki;
+  }
+
+  &__start {
+    font-family: jaapokki;
+  }
+
+  &__age {
+    font-family: jaapokki;
+  }
+}
+
+.newscontainer {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newsletter {
+  padding: 4rem;
+  background-color: var(--red);
+  width: 50vw;
+  height: 30rem;
+}
+
+.tricks {
+  width: 50vw;
+  height: 30rem;
+}
+
+input[type=text], input[type=email] {
+  display: block;
+  color: white;
+  font-size: 100%;
+  letter-spacing: .05em;
+  width: 30rem;
+  background: none;
+  border: none;
+  background-image: url(../assets/img/triangle.png);
+  background-repeat: repeat-x;
+  background-position: 0 bottom;
+  padding: 0 0 1em;
+}
+
+.newsletter__form__name--animation {
+  animation: input-wave .4s linear infinite;
+}
+
+input[type=text]::placeholder, input[type=email]::placeholder {
+  color: white;
+}
+
+input:focus {
+  outline: none;
+  color: white;
+}
+
+@keyframes input-wave {
+
+  0% { background-position: -0 bottom; }
+
+  100% { background-position: 1.8rem bottom; }
+
+}
+
+.error {
+  padding-top: .5rem;
+  height: 3rem;
+  color: var(--yellow);
 }
 
 /*========= PROGRAMM.PHP ============*/
@@ -311,4 +416,30 @@ input, select {
     object-fit: cover;
     object-position: center;
   }
+}
+
+.squiggly {
+  position: absolute;
+  top: 26rem;
+  left: 100rem;
+  animation: squiggly-anim .34s linear infinite;
+  filter: url(`#squiggly-0`);
+  display: inline-block;
+  vertical-align: middle;
+  outline: none;
+  text-align: center;
+  line-height: 1;
+}
+
+@keyframes squiggly-anim {
+
+  0% { filter: url(#squiggly-0); }
+
+  25% { filter: url(#squiggly-1); }
+
+  50% { filter: url(#squiggly-2); }
+
+  75% { filter: url(#squiggly-3); }
+
+  100% { filter: url(#squiggly-4); }
 }
