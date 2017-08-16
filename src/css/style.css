@@ -431,6 +431,20 @@ input, select {
   line-height: 1;
 }
 
+.squiggly2 {
+  position: absolute;
+  width: 100%;
+  max-height: 80rem;
+  object-fit: cover;
+  animation: squiggly-anim .34s linear infinite;
+  filter: url(`#squiggly-0`);
+  display: inline-block;
+  vertical-align: middle;
+  outline: none;
+  text-align: center;
+  line-height: 1;
+}
+
 @keyframes squiggly-anim {
 
   0% { filter: url(#squiggly-0); }
@@ -442,4 +456,8 @@ input, select {
   75% { filter: url(#squiggly-3); }
 
   100% { filter: url(#squiggly-4); }
+}
+
+.selected {
+  background-color: red;
 }
