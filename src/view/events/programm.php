@@ -57,11 +57,11 @@
     <input type="submit" value="ZOEK">
   </form>
 
-  <a class="" href=index.php?page=program&age=1<?php
+  <!-- <a class="" href=index.php?page=program&age=1<?php
   foreach($chosenAges as $age) {
     echo '&amp;age=' . $age;
   }
-   ?>>1</a>
+   ?>>1</a> -->
 
   <?php
   $ages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
