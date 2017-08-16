@@ -1,7 +1,7 @@
 
 <section class="flex">
 <section class="filter">
-  <form class="filter__form" action="index.php?page=program" method="post" id='form'>
+  <form class="filter__form" action="index.php?page=program" method="get" id='form'>
     <div class="filter__form__date">
       <!-- <input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"> -->
       <input type="date" name="date" placeholder="Datum">
@@ -56,6 +56,45 @@
 
     <input type="submit" value="ZOEK">
   </form>
+
+  <a class="" href=index.php?page=program&age=1<?php
+  foreach($chosenAges as $age) {
+    echo '&amp;age=' . $age;
+  }
+   ?>>1</a>
+
+  <?php
+  $ages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+  if (!empty($_GET['age'])) {
+    $current_age = $_GET['age'];
+  }
+
+  foreach($ages as $age) {
+      if($age == $current_age) {
+          echo '<a class="selected" href="index.php?page=program&amp;age='.$age.'">'.$age.'</a>';
+        } else {
+          echo '<a href="index.php?page=program&amp;age='.$age.'">'.$age.'</a>';
+      }
+  }
+  ?>
+
+  <?php
+  $periods = ["Kerstperiode", "Paasperiode"];
+  if (!empty($_GET['period'])) {
+    $current_period = $_GET['period'];
+  }
+
+  foreach($periods as $period) {
+      if($period == $current_period) {
+          echo '<a id="link" class="selected click" href="index.php?page=program&amp;period='.$period.'">'.$period.'</a>';
+        } else {
+          echo '<a id="link" class="click" href="index.php?page=program&amp;period='.$period.'">'.$period.'</a>';
+      }
+  }
+  ?>
+
+
 </section>
 
 <section class="programm">
@@ -68,7 +107,7 @@
       <div class="programm__event__title"><h2><?php echo $event['title']; ?></h2></header></div>
       <div class="programm__event__start"> <?php echo $event['start'];?> </div>
       <div class="programm__event__age"><?php echo $event['start_age'];?> - <?php echo $event['end_age'];?> jaar</div>
-      <?php echo '<a class="program_event_extra" href=index.php?page=detail&id=' . $event['id'] . '>' ?>Meer Info -></a>
+      <?php echo '<a class="" href=index.php?page=detail&id=' . $event['id'] . '>' ?>Meer Info -></a>
     </article>
     <? endforeach;?>
 </section>

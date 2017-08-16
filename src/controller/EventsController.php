@@ -104,9 +104,31 @@ class EventsController extends Controller {
   public function programm() {
     $conditions = array();
 
-    if (!empty($_POST['age'])) {
-      $age = $_POST['age'];
-      echo $_POST['age'];
+    // date_default_timezone_set('Europe/Brussels');
+    // $dateNow = date("Y-m-d H:i:s");
+    // $dateEndChristmas = '2018-01-07 00:00:00';
+    // $dateBeginEaster = '2018-04-2 00:00:00';
+    // echo $dateNow;
+    // echo $dateEndChristmas;
+    // echo $dateBeginEaster;
+    //
+    // if ($dateNow <= $dateEndChristmas) {
+    //   $conditions[] = array(
+    //     'field' => 'start',
+    //     'comparator' => '<=',
+    //     'value' => $dateEndChristmas
+    //   );
+    // } else {
+    //   $conditions[] = array(
+    //     'field' => 'start',
+    //     'comparator' => '>=',
+    //     'value' => $dateBeginEaster
+    //   );
+    // }
+
+
+    if (!empty($_GET['age'])) {
+      $age = $_GET['age'];
       $conditions[] = array(
         'field' => 'start_age',
         'comparator' => '<=',
@@ -120,8 +142,7 @@ class EventsController extends Controller {
       );
     }
 
-    if (!empty($_POST['period']) && $_POST['period'] == 'Paasperiode') {
-      echo $_POST['period'];
+    if (!empty($_GET['period']) && $_GET['period'] == 'Paasperiode') {
       $conditions[] = array(
         'field' => 'start',
         'comparator' => '>=',
@@ -135,7 +156,7 @@ class EventsController extends Controller {
       );
     }
 
-    if (!empty($_POST['period']) && $_POST['period'] == 'Kerstperiode') {
+    if (!empty($_GET['period']) && $_GET['period'] == 'Kerstperiode') {
       $conditions[] = array(
         'field' => 'start',
         'comparator' => '>=',
@@ -149,20 +170,67 @@ class EventsController extends Controller {
       );
     }
 
-    if (!empty($_POST['date'])) {
-      $date1 = $_POST['date'] . ' 00:00:00';
-      $date2 = $_POST['date'] . ' 23:59:59';
-      $conditions[] = array(
-        'field' => 'start',
-        'comparator' => '>=',
-        'value' => $date1
-      );
-      $conditions[] = array(
-        'field' => 'start',
-        'comparator' => '<=',
-        'value' => $date2
-      );
-    }
+
+
+    // if (!empty($_POST['age'])) {
+    //   $age = $_POST['age'];
+    //   echo $_POST['age'];
+    //   $conditions[] = array(
+    //     'field' => 'start_age',
+    //     'comparator' => '<=',
+    //     'value' => $age
+    //   );
+    //
+    //   $conditions[] = array(
+    //     'field' => 'end_age',
+    //     'comparator' => '>=',
+    //     'value' => $age
+    //   );
+    // }
+    //
+    // if (!empty($_POST['period']) && $_POST['period'] == 'Paasperiode') {
+    //   echo $_POST['period'];
+    //   $conditions[] = array(
+    //     'field' => 'start',
+    //     'comparator' => '>=',
+    //     'value' => '2018-04-12 00:00:00'
+    //   );
+    //
+    //   $conditions[] = array(
+    //     'field' => 'start',
+    //     'comparator' => '<=',
+    //     'value' => '2018-04-20 23:59:59'
+    //   );
+    // }
+    //
+    // if (!empty($_POST['period']) && $_POST['period'] == 'Kerstperiode') {
+    //   $conditions[] = array(
+    //     'field' => 'start',
+    //     'comparator' => '>=',
+    //     'value' => '2017-12-27 00:00:00'
+    //   );
+    //
+    //   $conditions[] = array(
+    //     'field' => 'start',
+    //     'comparator' => '<=',
+    //     'value' => '2018-01-06 23:59:59'
+    //   );
+    // }
+    //
+    // if (!empty($_POST['date'])) {
+    //   $date1 = $_POST['date'] . ' 00:00:00';
+    //   $date2 = $_POST['date'] . ' 23:59:59';
+    //   $conditions[] = array(
+    //     'field' => 'start',
+    //     'comparator' => '>=',
+    //     'value' => $date1
+    //   );
+    //   $conditions[] = array(
+    //     'field' => 'start',
+    //     'comparator' => '<=',
+    //     'value' => $date2
+    //   );
+    // }
 
     // $conditions[] = array(
     //   'field' => 'start_age',
