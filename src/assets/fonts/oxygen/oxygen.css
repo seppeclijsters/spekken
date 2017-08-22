@@ -1,0 +1,17 @@
+@font-face {
+  font-family: oxygen;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url(oxygen.woff) format('woff'),
+    url(oxygen.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: oxygen;
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url(oxygen-bold.woff) format('woff'),
+    url(oxygen-bold.woff2) format('woff2');
+}

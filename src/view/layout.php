@@ -13,8 +13,8 @@
 
     WebFontConfig = {
       custom: {
-        families: ['jaapokki'],
-        urls: ['/assets/fonts/jaapokki/jaapokki.css']
+        families: ['jaapokki','oxygen:n4,n7'],
+        urls: ['/assets/fonts/jaapokki/jaapokki.css', '/assets/fonts/oxygen/oxygen.css']
       }
     };
 
@@ -31,17 +31,6 @@
 
   </head>
   <body>
-    <nav class="nav">
-      <div class="nav__logo">HALLO</div>
-      <div class="nav__list">
-        <a class="nav__list__link" href="index.php?page=index">Home</a>
-        <a class="nav__list__link" href="index.php?page=program">Programma</a>
-        <a class="nav__list__link" href="#">Over Spekken</a>
-        <a class="nav__list__link" href="#">Tickets</a>
-      </div>
-    </nav>
-
-
     <div class="container">
       <?php if(!empty($_SESSION['info'])): ?><div class="alert alert-success"><?php echo $_SESSION['info'];?></div><?php endif; ?>
       <?php if(!empty($_SESSION['error'])): ?><div class="alert alert-danger"><?php echo $_SESSION['error'];?></div><?php endif; ?>

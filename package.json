@@ -1,5 +1,5 @@
 {
-  "name": "MAJORIII_DOK",
+  "name": "MAJORIII_SPEKKEN",
   "version": "0.1.0",
    "scripts": {
      "development": "mamp ./src & webpack-dev-server",

@@ -1,3 +1,15 @@
+<nav class="nav">
+  <div class="nav__logo">
+    <a href="index.php?page=index"><img class="" src="assets/img/logo.png" alt="Logo Spekken"></a>
+  </div>
+  <ul class="nav__list">
+    <a class="nav__list__link nav__list__link--active" href="index.php?page=index">Home</a>
+    <a class="nav__list__link" href="index.php?page=program">Programma</a>
+    <a class="nav__list__link" href="#">Over Spekken</a>
+    <a class="nav__list__link" href="#">Tickets</a>
+  </ul>
+</nav>
+
 <div class="detail detail--container">
   <div class="detail__title"><?php echo $event['title'];?></div>
   <picture>
