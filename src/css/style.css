@@ -50,11 +50,72 @@ h1 {
   }
 }
 
-.theater__picture {
-  margin-top: -9rem;
-  width: 100%;
-  max-height: 82rem;
-  object-fit: cover;
+.hamburger {
+  background: url(../assets/svg/hamburger.svg);
+  background-size: contain;
+  width: 5rem;
+  height: 5rem;
+}
+
+.theater {
+  overflow: hidden;
+  height: 75rem;
+
+  &__picture {
+    margin-top: -9rem;
+    width: 100%;
+    min-height: 85rem;
+    object-fit: cover;
+  }
+}
+
+.theater__tag {
+  position: relative;
+  top: -1rem;
+  left: 10rem;
+
+  &__triangle {
+    position: absolute;
+    top: 17rem;
+    left: 68.5rem;
+    width: 11rem;
+    height: 30rem;
+    background-image: url(../assets/svg/triangleHeader.svg);
+    background-repeat: no-repeat;
+  }
+
+  &__triangle2 {
+    position: absolute;
+    top: 12rem;
+    left: 14rem;
+    width: 30rem;
+    height: 30rem;
+    background-image: url(../assets/svg/triangleHeader2.svg);
+    background-repeat: no-repeat;
+  }
+
+  &__tagline {
+    position: absolute;
+    top: 20.5rem;
+    left: 21.2rem;
+    font-family: jaapokki;
+    color: var(--red);
+    font-size: 2.5rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    position: absolute;
+    top: 20rem;
+    left: 15rem;
+    font-family: jaapokki;
+    color: var(--blue);
+    font-size: 4.5rem;
+
+    &__highlight {
+      font-size: 9rem;
+    }
+  }
 }
 
 /*.theater__leftcurtain {
@@ -139,7 +200,6 @@ h1 {
     font-size: 1.8rem;
     text-shadow: -75px 5px 9px rgba(0, 0, 0, .17);
     line-height: 4rem;
-    text-align: justify;
 
     &__highlight {
       font-size: 2rem;
@@ -149,14 +209,32 @@ h1 {
   }
 }
 
+.testt {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .explore {
+  position: relative;
   width: 960px;
   margin: auto;
   margin-top: 10rem;
 
+  &__triangles {
+    position: absolute;
+    right: 0;
+    top: 5rem;
+    background-image: url(../assets/svg/doubleTriangle.svg);
+    background-repeat: no-repeat;
+    width: 20rem;
+    height: 20rem;
+  }
+
   &__title {
     font-family: jaapokki;
     font-size: 4rem;
+    margin-bottom: 4rem;
 
     &__highlight {
       color: var(--blue);
@@ -164,17 +242,96 @@ h1 {
   }
 
   &__events {
+    margin-top: -7rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
+  }
+
+  &__more {
+    position: relative;
+    display: block;
+    margin: 1.5rem 0 0 53rem;
+    text-decoration: none;
+    font-family: jaapokki;
+    font-size: 4rem;
+    color: black;
+    text-transform: uppercase;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 17rem;
+      top: -.4rem;
+      display: inline-block;
+      background: url(../assets/svg/buttonBlue.svg);
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &__highlight {
+      font-size: 6rem;
+      color: var(--blue);
+    }
+  }
+}
+
+.explore__button--active {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--red);
+  color: white;
+  border-radius: .5rem;
+  padding: 1rem 1rem 1rem 4rem;
+  font-family: oxygen;
+  font-size: 1.8rem;
+  border: .3rem solid var(--red);
+  margin-bottom: 5rem;
+
+  &::before {
+    content: '';
+    width: 3rem;
+    height: 4rem;
+    background: url(../assets/svg/christmasTree.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.explore__button {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--red);
+  padding: 1rem 1rem 1rem 4rem;
+  font-family: oxygen;
+  font-size: 1.8rem;
+  border: .3rem solid var(--red);
+  border-radius: .5rem;
+
+  &::before {
+    padding-top: .5rem;
+    content: '';
+    width: 3rem;
+    height: 5.5rem;
+    background: url(../assets/svg/easterBunny.svg);
+    background-size: 110%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }
 
 .event {
+  width: 46rem;
+  height: 23rem;
   display: flex;
-  flex-wrap: wrap;
   border-radius: 1rem;
-  border: .3rem solid var(--red);
+  border: .4rem solid var(--red);
   padding: 1rem;
   margin-top: 3rem;
 
@@ -186,25 +343,57 @@ h1 {
   }
 }
 
+.event:first-child {
+  margin-top: 6rem;
+}
+
+.event:last-child {
+  margin-top: -.5rem;
+}
+
 .event__info {
+  padding-left: 2rem;
 
   &__title {
+    text-transform: capitalize;
     font-family: jaapokki;
+    margin-top: 2rem;
+    font-size: 2.2rem;
+    letter-spacing: .1rem;
   }
 
   &__start {
-    font-family: jaapokki;
+    margin-top: 2rem;
+    font-family: oxygen;
+    font-size: 1.8rem;
   }
 
   &__age {
-    font-family: jaapokki;
+    margin: 2rem 0;
+    font-family: oxygen;
+    font-size: 1.8rem;
+  }
+
+  &__more {
+    white-space: pre;
+    overflow: visible;
+    width: 15rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    font-family: oxygen;
+    font-size: 1.7rem;
+    background-image: url(../assets/svg/button.svg);
+    background-repeat: no-repeat;
+    background-position: right;
   }
 }
 
 .creative {
   width: 960px;
   margin: auto;
-  margin-top: 10rem;
+  margin-top: 15rem;
   display: flex;
 
   &__picture {
@@ -212,12 +401,23 @@ h1 {
   }
 
   &__info {
+    margin-top: 18rem;
 
     &__title {
       font-family: jaapokki;
       font-size: 3.5rem;
       text-transform: uppercase;
       color: var(--blue);
+    }
+
+    &__text {
+      font-family: oxygen;
+      font-size: 1.8rem;
+      line-height: 3rem;
+
+      &__highlight {
+        color: var(--blue);
+      }
     }
   }
 }
@@ -253,6 +453,7 @@ h1 {
   width: 50vw;
 
   &__title {
+    width: 40rem;
     margin-bottom: 4rem;
     font-size: 3.5rem;
     font-family: jaapokki;
@@ -293,7 +494,7 @@ input[type=submit] {
   text-align: left;
   border: none;
   cursor: pointer;
-  background-image: url(../assets/svg/button.svg);
+  background-image: url(../assets/svg/buttonWhite.svg);
   background-repeat: no-repeat;
   background-position: right;
   background-size: 4rem;
@@ -328,7 +529,7 @@ input:focus {
     font-family: jaapokki;
     font-size: 3.5rem;
     color: var(--red);
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
   }
 
   &__list {
@@ -382,6 +583,11 @@ input:focus {
     background-image: url(../assets/svg/fb.svg);
     background-position: right;
   }
+}
+
+.filters {
+  width: 0;
+  height: 0;
 }
 /*========= PROGRAMM.PHP ============*/
 
@@ -598,4 +804,224 @@ input:focus {
 
 .selected {
   background-color: red;
+}
+
+/*________MEDIA QUERIES__________*/
+
+@media only screen and (width <= 1200px) {
+
+  .theater__tag {
+    left: 0;
+
+    &__tagline {
+      top: 21.5rem;
+      left: 20.5rem;
+      font-size: 2.2rem;
+    }
+
+    &__triangle {
+      left: 61rem;
+    }
+
+    &__triangle2 {
+      top: 12.5rem;
+      width: 30rem;
+    }
+
+    &__title {
+      top: 21rem;
+      font-size: 4rem;
+
+      &__highlight {
+        font-size: 8rem;
+      }
+    }
+  }
+}
+
+@media only screen and (width <= 960px) {
+
+  .theater__picture {
+    min-height: inherit;
+  }
+
+  .spekken {
+    width: 100vw;
+
+    &__info {
+      width: 90vw;
+      padding: 8rem 0;
+
+      &__about {
+        width: 50vw;
+      }
+    }
+  }
+
+  .explore {
+    width: 90vw;
+
+    &__more {
+      margin: 3rem 0 0 2rem;
+    }
+
+    &__events {
+      flex-direction: column;
+    }
+  }
+
+  .event {
+    width: 100%;
+  }
+
+  .event:last-child {
+    margin-top: 3rem;
+  }
+
+  .creative {
+    width: 90vw;
+    margin-top: 3rem;
+
+    &__picture {
+      width: 50vw;
+    }
+
+    &__info {
+      margin-top: 10rem;
+    }
+  }
+
+  .newscontainer {
+    flex-direction: column;
+  }
+
+  .tricks {
+    width: 90vw;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .newsletter {
+    width: 95vw;
+    align-self: flex-end;
+
+    &__title {
+      width: auto;
+    }
+  }
+
+  .footer__info {
+    width: 90vw;
+  }
+
+  .partners {
+    margin-top: 8rem;
+  }
+
+  .partners__list__logo {
+    width: 30vw;
+  }
+}
+
+@media only screen and (width <= 600px) {
+
+  .spekken {
+    width: 100vw;
+
+    &__info {
+
+      &__title {
+        font-size: 2.8rem;
+      }
+
+      &__about {
+        width: 90vw;
+      }
+    }
+  }
+
+  .explore__triangles {
+    right: -6rem;
+    width: 14rem;
+  }
+
+  .newsletter {
+    width: 100vw;
+    border-radius: unset;
+    padding: 2rem;
+
+    &__title {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .partners__list__logo {
+    width: 40vw;
+  }
+}
+
+@media only screen and (width <= 450px) {
+
+  .spekken__info__title {
+    font-size: 2.5rem;
+  }
+
+  .spekken__info__about {
+    line-height: 2.7rem;
+    font-size: 1.7rem;
+  }
+
+  .explore__triangles {
+    display: none;
+  }
+
+  .explore__title {
+    font-size: 3.3rem;
+  }
+
+  .event {
+    overflow: hidden;
+    flex-direction: column;
+    padding: 0;
+    height: auto;
+
+    &__picture {
+      width: 100%;
+      border-radius: unset;
+    }
+  }
+
+  .event__info {
+    padding-left: 1.5rem;
+
+    &__title {
+      margin-top: 1rem;
+    }
+
+    &__more {
+      display: inline-block;
+      margin: 0 0 2rem;
+      height: 3rem;
+      line-height: 3rem;
+    }
+  }
+}
+
+@media only screen and (width <= 400px) {
+
+  .newsletter {
+    overflow: hidden;
+
+    &__title {
+      font-size: 2.2rem;
+    }
+  }
+
+  input[type=text], input[type=email] {
+    padding: 0;
+    width: auto;
+    margin: 0;
+    letter-spacing: 0;
+  }
 }
