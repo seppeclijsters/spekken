@@ -265,7 +265,7 @@ class EventsController extends Controller {
       $this->set('event', $event);
 
       $location = $this->eventDAO->selectLocationById(($_GET['id']));
-      $this->set('location', location);
+      $this->set('location', $location);
 
       $eventbefore = $this->eventDAO->selectById(($_GET['id']-1));
       $this->set('eventbefore', $eventbefore);

@@ -592,26 +592,76 @@ input:focus {
 /*========= PROGRAMM.PHP ============*/
 
 .flex {
+  margin-top: 8rem;
   display: flex;
-  justify-content: space-between;
 }
 
 .filter {
+  padding: 2rem;
+  min-width: 25rem;
+  max-width: 25rem;
+  height: 40rem;
+  background-color: var(--red);
+  border-radius: 0 1rem 1rem 0;
 
-  &__form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 25rem;
-    height: 40rem;
-    background-color: var(--red);
-    border-radius: 1rem;
+  &__age {
+    color: white;
+
+    &__title {
+      padding: 0 0 .5rem;
+      font-family: oxygen;
+      font-size: 2rem;
+      color: white;
+    }
   }
+
+  &__period {
+    color: white;
+
+    &__title {
+      padding: 2rem 0 .5rem;
+      font-family: oxygen;
+      font-size: 2rem;
+      color: white;
+    }
+  }
+}
+
+.age {
+  display: inline-block;
+  padding: .4rem;
+  text-align: center;
+  text-decoration: none;
+  font-family: oxygen;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.age--selected {
+  border-radius: 2rem;
+  background-color: var(--yellow);
+  color: var(--red);
+}
+
+.period {
+  display: inline-block;
+  padding: .4rem;
+  text-align: center;
+  text-decoration: none;
+  font-family: oxygen;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.period--selected {
+  border-radius: 2rem;
+  background-color: var(--yellow);
+  color: var(--red);
 }
 
 .programm {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -621,7 +671,7 @@ input:focus {
   height: 40rem;
   border-radius: 1rem;
   border: .3rem solid var(--red);
-  margin: 0 7rem 6rem 0;
+  margin: 0 4rem 6rem;
   padding: 1rem;
 
   &__picture {
@@ -635,9 +685,48 @@ input:focus {
   &__title {
     margin-top: 1rem;
     font-family: jaapokki;
-    font-size: 2rem;
+    font-size: 2.5rem;
     letter-spacing: .1rem;
   }
+
+  &__start {
+    margin-top: 1.5rem;
+    font-family: oxygen;
+    font-size: 1.8rem;
+  }
+
+  &__age {
+    margin-top: 1.5rem;
+    font-family: oxygen;
+    font-size: 1.8rem;
+  }
+
+  &__more {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 3.5rem;
+    font-family: oxygen;
+    font-size: 1.6rem;
+    color: black;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 10rem;
+      top: -1rem;
+      background: url(../assets/svg/button.svg);
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}
+
+.programm__event__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*========= DETAIL.PHP ============*/
@@ -645,15 +734,29 @@ input:focus {
 .detail {
 
   &--container {
-    width: 80%;
+    width: 1100px;
     margin: auto;
+    margin-top: 15rem;
     position: relative;
   }
 
   &__title {
+    margin-left: 8rem;
     font-family: jaapokki;
-    font-size: 5rem;
+    font-size: 6rem;
     color: var(--red);
+    margin-bottom: 7rem;
+    text-transform: uppercase;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 6rem;
+      background: url(../assets/svg/triangleNav.svg);
+      background-repeat: repeat-x;
+      width: 9.2rem;
+      height: 1.9rem;
+    }
   }
 
   &__picture {
@@ -663,27 +766,178 @@ input:focus {
   }
 
   &__description {
+    font-family: oxygen;
     column-count: 2;
     column-gap: 5rem;
-    width: 60vw;
-    margin: auto;
-    margin-top: 10rem;
     line-height: 3rem;
   }
 }
 
+.detail__descriptions {
+  width: 80rem;
+  margin: auto;
+  margin-top: 5rem;
+}
+
 .detail__information {
-  position: absolute;
-  top: 45rem;
-  left: calc(50% - 45rem);
+  position: relative;
+  margin: auto;
+  margin-top: -5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 90rem;
+  width: 95rem;
   height: 11rem;
   background-color: var(--bg-color);
   border-radius: 1rem;
-  box-shadow: 10px 10px 35px 1px rgba(0, 0, 0, .26);
+  box-shadow: 5px 7px 9px 0 rgba(0, 0, 0, .14);
+}
+
+.detail__information__age {
+
+  &__number {
+    padding: .8rem 0;
+    font-family: oxygen;
+    font-size: 1.5rem;
+  }
+
+  &__icon {
+    position: relative;
+    font-family: jaapokki;
+    text-transform: uppercase;
+    color: var(--red);
+    font-size: 1.5rem;
+    letter-spacing: .2rem;
+
+    &::before {
+      content: '';
+      width: 3.5rem;
+      height: 3.5rem;
+      background: url(../assets/svg/ageIcon.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      left: -4rem;
+      top: -1.7rem;
+    }
+  }
+}
+
+.detail__information__location {
+
+  &__loc {
+    padding: .8rem 0;
+    font-family: oxygen;
+    font-size: 1.5rem;
+  }
+
+  &__icon {
+    position: relative;
+    font-family: jaapokki;
+    text-transform: uppercase;
+    color: var(--red);
+    font-size: 1.5rem;
+    letter-spacing: .2rem;
+
+    &::before {
+      content: '';
+      width: 3.5rem;
+      height: 3.5rem;
+      background: url(../assets/svg/placeIcon.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      left: -4rem;
+      top: -1.5rem;
+    }
+  }
+}
+
+.detail__information__date {
+
+  &__hour {
+    padding: .8rem 0;
+    font-family: oxygen;
+    font-size: 1.5rem;
+  }
+
+  &__icon {
+    position: relative;
+    font-family: jaapokki;
+    text-transform: uppercase;
+    color: var(--red);
+    font-size: 1.5rem;
+    letter-spacing: .2rem;
+
+    &::before {
+      content: '';
+      width: 3.5rem;
+      height: 3.5rem;
+      background: url(../assets/svg/clockIcon.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      left: -4rem;
+      top: -1.3rem;
+    }
+  }
+}
+
+.detail__information__tickets {
+  cursor: pointer;
+  position: relative;
+  width: 15rem;
+  height: 4rem;
+  line-height: 4.5rem;
+  padding-left: 1rem;
+  background-color: var(--red);
+  color: white;
+  font-family: jaapokki;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+
+  &::before {
+    content: '';
+    width: 2.5rem;
+    height: 2.5rem;
+    background: url(../assets/svg/buttonWhite.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 11.5rem;
+    top: .7rem;
+  }
+}
+
+.detail__social {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  margin-top: 3rem;
+  background-color: var(--blue);
+  width: 18rem;
+  height: 5rem;
+  color: white;
+  font-family: jaapokki;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  padding-right: 1rem;
+  transition: background-color .2s;
+
+  &::before {
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    background: url(../assets/svg/fbDetail.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 1rem;
+    top: 1.3rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--red);
+  }
 }
 
 .button {
@@ -712,6 +966,11 @@ input:focus {
   }
 }
 
+.smaakmakers {
+  overflow: hidden;
+  margin-top: 15rem;
+}
+
 .smaakmakers__title {
   font-size: 5rem;
   font-family: jaapokki;
@@ -730,9 +989,13 @@ input:focus {
 }
 
 .smaakmakers__programm {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: jaapokki;
   font-size: 2rem;
-  text-align: center;
+  color: white;
   border-top: 1rem solid white;
   border-bottom: 1rem solid white;
   background-color: var(--red);
@@ -802,10 +1065,6 @@ input:focus {
   100% { filter: url(#squiggly-4); }
 }
 
-.selected {
-  background-color: red;
-}
-
 /*________MEDIA QUERIES__________*/
 
 @media only screen and (width <= 1200px) {
@@ -839,7 +1098,33 @@ input:focus {
   }
 }
 
-@media only screen and (width <= 960px) {
+@media only screen and (width <= 1100px) {
+
+  /*_______________DETAIL.PHP_______________*/
+
+  .detail--container {
+    width: 90vw;
+  }
+
+  .detail__title {
+    font-size: 5vw;
+  }
+
+  .button {
+    display: none;
+  }
+
+  .detail__information {
+    width: 85vw;
+  }
+
+  .detail__descriptions {
+    width: 70vw;
+  }
+
+}
+
+@media only screen and (width <= 970px) {
 
   .theater__picture {
     min-height: inherit;
@@ -921,6 +1206,72 @@ input:focus {
   .partners__list__logo {
     width: 30vw;
   }
+
+  /*_______PROGRAMM_________*/
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .filter {
+    min-width: 100vw;
+    border-radius: unset;
+    height: 17rem;
+    margin-bottom: 6rem;
+  }
+
+  /*_______DETAIL.PHP_________*/
+
+  .detail__descriptions {
+    width: 90vw;
+  }
+
+  .detail__information {
+    height: 35rem;
+    width: 90vw;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__date {
+      margin-top: 2rem;
+      margin-left: 5rem;
+      width: 20rem;
+    }
+
+    &__location {
+      margin-left: 5rem;
+      width: 20rem;
+    }
+
+    &__age {
+      margin-left: 5rem;
+      width: 20rem;
+    }
+
+    &__tickets {
+      margin-left: 1rem;
+    }
+  }
+
+  .smaakmakers__flex {
+    flex-direction: column;
+  }
+
+  .smaakmakers__eventbefore__picture {
+    width: 100vw;
+    /*border: .7rem solid white;*/
+  }
+
+  .smaakmakers__programm {
+    width: 100vw;
+    height: 15rem;
+    border: none;
+  }
+
+  .smaakmakers__eventafter__picture {
+    width: 100vw;
+    /*border: .7rem solid white;*/
+  }
 }
 
 @media only screen and (width <= 600px) {
@@ -958,6 +1309,38 @@ input:focus {
 
   .partners__list__logo {
     width: 40vw;
+  }
+
+  /*_______DETAIL.PHP_________*/
+
+  .detail--container {
+    width: 85vw;
+  }
+
+  .detail__title {
+    margin-left: 0;
+    font-size: 3rem;
+  }
+
+  .detail__information {
+    width: 85vw;
+  }
+
+  .detail__descriptions {
+    width: 85vw;
+  }
+
+  .detail__description {
+    column-count: 1;
+    font-family: oxygen;
+  }
+
+  .smaakmakers__title {
+    font-size: 4rem;
+
+    &__highlight {
+      font-size: 5rem;
+    }
   }
 }
 
@@ -1004,6 +1387,18 @@ input:focus {
       margin: 0 0 2rem;
       height: 3rem;
       line-height: 3rem;
+    }
+  }
+
+  .detail__picture {
+    height: 32rem;
+  }
+
+  .smaakmakers__title {
+    font-size: 2.5rem;
+
+    &__highlight {
+      font-size: 3rem;
     }
   }
 }

@@ -38,18 +38,20 @@ const Validate = () => {
   };
 
   const init = () => {
-    $newsletter.noValidate = true;
-    $newsletter.addEventListener(`submit`, validateForm);
+    if ($newsletter) {
+      $newsletter.noValidate = true;
+      $newsletter.addEventListener(`submit`, validateForm);
 
-    const $email = document.querySelector(`.newsletter__form__email`);
-    $email.addEventListener(`blur`, onBlur);
-    $email.addEventListener(`input`, onInput);
-    $email.addEventListener(`click`, onClick);
+      const $email = document.querySelector(`.newsletter__form__email`);
+      $email.addEventListener(`blur`, onBlur);
+      $email.addEventListener(`input`, onInput);
+      $email.addEventListener(`click`, onClick);
 
-    const $name = document.querySelector(`.newsletter__form__name`);
-    $name.addEventListener(`blur`, onBlur);
-    $name.addEventListener(`input`, onInput);
-    $name.addEventListener(`click`, onClick);
+      const $name = document.querySelector(`.newsletter__form__name`);
+      $name.addEventListener(`blur`, onBlur);
+      $name.addEventListener(`input`, onInput);
+      $name.addEventListener(`click`, onClick);
+    }
   };
 
   init();
