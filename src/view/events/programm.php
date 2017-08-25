@@ -7,8 +7,17 @@
     <a class="nav__list__link nav__list__link--active" href="index.php?page=program">Programma</a>
     <a class="nav__list__link" href="#">Over Spekken</a>
     <a class="nav__list__link" href="#">Tickets</a>
+    <li class="hamburger"></li>
   </ul>
 </nav>
+<div class="mobileWrapper none">
+  <ul class="menu">
+    <li class="menu__item"><a class="menu__item__link" href="index.php?page=index">Home</a></li>
+    <li class="menu__item"><a class="menu__item__link" href="index.php?page=program">Programma</a></li>
+    <li class="menu__item"><a class="menu__item__link" href="#">Over Spekken</a></li>
+    <li class="menu__item"><a class="menu__item__link" href="#">Tickets</a></li>
+  </ul>
+</div>
 
 <section class="flex">
   <section class="filter">
@@ -56,8 +65,8 @@
       <?php foreach($events as $event): ?>
       <article class="programm__event">
         <picture>
-            <source class="programm__event__picture" type="image/webp" srcset="../../assets/img/<?php echo $event['id']?>.jpg" alt="">
-            <img class="programm__event__picture" src="../../assets/img/<?php echo $event['id']?>.jpg" alt="">
+            <source class="programm__event__picture" type="image/webp" srcset="assets/img/<?php echo $event['id']?>.webp" alt="event picture">
+            <img class="programm__event__picture" src="assets/img/<?php echo $event['id']?>.jpg" alt="event picture">
         </picture>
         <div class="programm__event__title"><h2><?php echo $event['title']; ?></h2></header></div>
         <div class="programm__event__flex">
@@ -66,6 +75,6 @@
         </div>
         <?php echo '<a class="programm__event__more" href=index.php?page=detail&id=' . $event['id'] . '>' ?>Lees Meer</a>
       </article>
-      <? endforeach;?>
+      <?php endforeach; ?>
   </section>
   </section>

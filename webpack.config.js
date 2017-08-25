@@ -10,8 +10,10 @@ const configHtmls = require(`webpack-config-htmls`)();
 
 const extractCSS = new ExtractTextWebpackPlugin(`css/style.css`);
 
+// `/`;`/seppe.clijsters/20162017/ma3/spekken/`;
 // change for production build on different server path
 const publicPath = `/`;
+
 
 const port = 3000;
 

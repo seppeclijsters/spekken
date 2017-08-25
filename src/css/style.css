@@ -24,13 +24,53 @@ h1 {
 
 /*========= INDEX.PHP ============*/
 
+.none {
+  display: none;
+}
+
+.mobileWrapper {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  background-color: var(--bg-color);
+}
+
+.menu {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  /*&:first-child {
+    margin-top: 5rem;
+  }*/
+
+  &__item {
+    margin: 3rem 0;
+
+    &__link {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--red);
+      font-family: jaapokki;
+      font-size: 3rem;
+      letter-spacing: .3rem;
+
+      &:hover {
+        color: var(--blue);
+      }
+    }
+  }
+}
+
 .nav {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin: 2rem;
+  padding: 2rem;
 
   &__list__link {
     font-family: jaapokki;
@@ -39,10 +79,16 @@ h1 {
     color: var(--red);
     text-transform: uppercase;
     margin: 0 2rem;
+    padding-top: 1.5rem;
     padding-bottom: 2rem;
+
+    &:hover {
+      color: var(--blue);
+    }
   }
 
   &__list__link--active {
+    display: inline-block;
     background-image: url(../assets/svg/triangleNav.svg);
     background-repeat: repeat-x;
     background-position: 0 bottom;
@@ -51,10 +97,11 @@ h1 {
 }
 
 .hamburger {
-  background: url(../assets/svg/hamburger.svg);
-  background-size: contain;
-  width: 5rem;
-  height: 5rem;
+  display: none;
+  background-image: url(../assets/svg/hamburger.svg);
+  background-size: cover;
+  width: 4rem;
+  height: 4rem;
 }
 
 .theater {
@@ -387,6 +434,7 @@ h1 {
     background-image: url(../assets/svg/button.svg);
     background-repeat: no-repeat;
     background-position: right;
+    color: black;
   }
 }
 
@@ -429,7 +477,7 @@ h1 {
 }
 
 .tricks {
-  padding: 4rem;
+  padding: 0 2rem 4rem 4rem;
   width: 50vw;
 
   &__title {
@@ -442,7 +490,77 @@ h1 {
   &__text {
     font-family: oxygen;
     font-size: 1.8rem;
-    line-height: 4rem;
+    line-height: 3rem;
+  }
+
+  &__button {
+    margin-top: 1rem;
+    cursor: pointer;
+    position: relative;
+    color: var(--red);
+    font-family: oxygen;
+    font-size: 2.2rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 10rem;
+      top: -1rem;
+      background: url(../assets/svg/button.svg);
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}
+
+.blogs {
+  padding: 0 2rem 4rem 4rem;
+
+  &__title {
+    font-family: jaapokki;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+
+  &__text {
+    font-family: oxygen;
+    font-size: 1.8rem;
+    line-height: 3rem;
+  }
+
+  &__button {
+    margin-top: 1rem;
+    cursor: pointer;
+    position: relative;
+    color: var(--red);
+    font-family: oxygen;
+    font-size: 2.2rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 10rem;
+      top: -1rem;
+      background: url(../assets/svg/button.svg);
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}
+
+.tricks__text__triangle {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: .6rem;
+    left: -2rem;
+    background: url(../assets/svg/trickTriangle.svg);
+    background-repeat: no-repeat;
+    width: 9.2rem;
+    height: 1.9rem;
   }
 }
 
@@ -522,6 +640,7 @@ input:focus {
 }
 
 .partners {
+  overflow: hidden;
   margin-top: 15rem;
 
   &__title {
@@ -1127,10 +1246,16 @@ input:focus {
 @media only screen and (width <= 970px) {
 
   .theater__picture {
-    min-height: inherit;
+    min-height: 75rem;
+  }
+
+  .theater__tag {
+    left: -10rem;
+    top: -5rem;
   }
 
   .spekken {
+    margin-top: -10rem;
     width: 100vw;
 
     &__info {
@@ -1183,6 +1308,12 @@ input:focus {
   .tricks {
     width: 90vw;
     margin: 0 auto;
+    padding: 0;
+  }
+
+  .blogs {
+    width: 90vw;
+    margin: 5rem auto;
     padding: 0;
   }
 
@@ -1274,7 +1405,78 @@ input:focus {
   }
 }
 
+@media only screen and (width <= 850px) {
+
+  .theater__picture {
+    min-height: 55rem;
+  }
+
+  .theater__tag {
+    left: -10rem;
+    top: -14rem;
+
+    &__triangle {
+      left: 51rem;
+      top: 20rem;
+      width: 7rem;
+    }
+
+    &__triangle2 {
+      left: 14rem;
+      top: 16rem;
+      width: 20rem;
+      height: 20rem;
+    }
+
+    &__title {
+      font-size: 3rem;
+
+      &__highlight {
+        font-size: 7rem;
+      }
+    }
+
+    &__tagline {
+      font-size: 1.9rem;
+    }
+  }
+
+  .spekken {
+    margin-top: -30rem;
+  }
+
+  .nav__list__link {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
 @media only screen and (width <= 600px) {
+
+  .theater__picture {
+    display: none;
+  }
+
+  .theater__tag__tagline {
+    top: 37.5rem;
+  }
+
+  .theater__tag__title {
+    top: 25rem;
+    font-size: 2.8rem;
+  }
+
+  .theater__tag__triangle {
+    top: 35rem;
+    left: 44rem;
+  }
+
+  .theater__tag__triangle2 {
+    top: 21.5rem;
+  }
 
   .spekken {
     width: 100vw;
@@ -1294,6 +1496,23 @@ input:focus {
   .explore__triangles {
     right: -6rem;
     width: 14rem;
+  }
+
+  .creative {
+    align-items: flex-start;
+    flex-direction: column;
+
+    &__picture {
+      width: 60vw;
+    }
+
+    &__info {
+      margin-top: 1rem;
+    }
+  }
+
+  .newscontainer {
+    margin-top: 5rem;
   }
 
   .newsletter {
@@ -1346,6 +1565,10 @@ input:focus {
 
 @media only screen and (width <= 450px) {
 
+  .theater__tag__title {
+    font-size: 6vw;
+  }
+
   .spekken__info__title {
     font-size: 2.5rem;
   }
@@ -1361,6 +1584,13 @@ input:focus {
 
   .explore__title {
     font-size: 3.3rem;
+  }
+
+  .explore__more {
+
+    &__highlight {
+      font-size: 4rem;
+    }
   }
 
   .event {
@@ -1404,6 +1634,33 @@ input:focus {
 }
 
 @media only screen and (width <= 400px) {
+
+  .theater__tag {
+    top: -12rem;
+  }
+
+  .theater__tag__title {
+    font-size: 5vw;
+    top: 21rem;
+  }
+
+  .theater__tag__tagline {
+    top: 33rem;
+  }
+
+  .theater__tag__triangle {
+    top: 33rem;
+    left: 30rem;
+  }
+
+  .theater__tag__triangle2 {
+    top: 18rem;
+    width: 19rem;
+  }
+
+  .creative__picture {
+    width: 90vw;
+  }
 
   .newsletter {
     overflow: hidden;

@@ -14,7 +14,7 @@
     WebFontConfig = {
       custom: {
         families: ['jaapokki','oxygen:n4,n7'],
-        urls: ['/assets/fonts/jaapokki/jaapokki.css', '/assets/fonts/oxygen/oxygen.css']
+        urls: ['assets/fonts/jaapokki/jaapokki.css', 'assets/fonts/oxygen/oxygen.css']
       }
     };
 
