@@ -1,3 +1,20 @@
+<?php
+  date_default_timezone_set('Europe/Brussels');
+  $dateNow = date("Y-m-d H:i:s");
+  $dateEndChristmas = '2018-01-07 00:00:00';
+  $dateBeginEaster = '2018-04-2 00:00:00';
+  $christmas = false;
+  $easter = false;
+
+
+  if ($dateNow <= $dateEndChristmas){
+    $christmas = true;
+  } else {
+    $easter = true;
+  }
+
+?>
+
 <nav class="nav">
   <div class="nav__logo">
     <a href="index.php?page=index"><img class="" src="assets/img/logo.png" alt="Logo Spekken"></a>
@@ -20,7 +37,6 @@
 </div>
 
 <header class="theater">
-  <!-- <img class="squiggly2" src="assets/img/light.png" alt=""> -->
   <div class="theater__tag">
     <div class="theater__tag__triangle"></div>
     <div class="theater__tag__triangle2"></div>
@@ -28,8 +44,8 @@
     <div class="theater__tag__title"><span class="theater__tag__title__highlight">K</span>indertheaterfestival</div>
   </div>
   <picture>
-          <source class="theater__picture" type="image/webp" srcset="assets/img/header4.webp" alt="Spekken"/>
-          <img class="theater__picture" src="assets/img/header4.jpg" alt="Spekken"/>
+          <source class="theater__picture" type="image/webp" srcset="assets/img/header.webp" alt="Spekken"/>
+          <img class="theater__picture" src="assets/img/header.jpg" alt="Spekken"/>
   </picture>
   <div class="theater__leftcurtain"></div>
   <div class="theater__rightcurtain"></div>
@@ -47,6 +63,11 @@
       wondere wereld van theater. Ze brengt tijdens de <span class="spekken__info__about__highlight">Paas- en Kerstvakantie</span> een rijk
       programma met kleine parels.
     </div>
+    <div class="spekken__light"></div>
+    <picture>
+            <source class="theater__spot" type="image/webp" srcset="assets/img/theaterSpot2.png" alt="theaterspot"/>
+            <img class="spekken__spot" src="assets/img/theaterSpot2.png" alt="theaterspot"/>
+    </picture>
   </article>
   <div class="spekken__bottomPattern"></div>
 </section>
@@ -55,10 +76,10 @@
   <div class="explore__triangles"></div>
 <section class="explore">
   <div class="explore__title"><p><span class="explore__title__highlight">ONTDEK</span> ONZE</p> VOORSTELLINGEN</p></div>
-  <a href="#" class="explore__button--active">Kerstvakantie</a>
+  <a href="index.php?page=index&amp;period=Kerstperiode" class="explore__button--active">Kerstvakantie</a>
   <a href="#" class="explore__button">Paasvakantie</a>
   <div class="explore__events">
-    <?php foreach($events as $event): ?>
+    <?php foreach($commingsoon as $event): ?>
       <article class="event">
         <picture>
             <source class="event__picture" type="image/webp" srcset="assets/img/<?php echo $event['id']?>.webp" alt="">
@@ -106,7 +127,7 @@
     <article class="blogs">
       <div class="blogs__title">Blogs</div>
       <div class="blogs__text">Wil jij meer te weten komen over onze voorstellingen? Lees dan zeker onze blogs!</div>
-      <div class="blogs__button">Meer tips</div>
+      <div class="blogs__button">Lees Meer</div>
     </article>
   </div>
   <article class="newsletter">
@@ -126,49 +147,27 @@
 </section>
 
 
-<section class="partners">
-  <div class="partners__title">Onze Partners</div>
-  <ul class="partners__list">
-    <li><a href="http://www.gentsewinterfeesten.be/"><img class="partners__list__logo" src="assets/img/logo1.png" alt="logo gentse winterfeesten"></a></li>
-    <li><a href="https://freetime.be/"><img class="partners__list__logo" src="assets/img/logo2.png" alt="logo free time"></a></li>
-  </ul>
-</section>
-
-<footer class="footer">
-  <div class="spekken__topPattern"></div>
-  <section class="footer__info">
-    <div class="footer__info__location">
-      <p class="location__highlight">Festivallocatie</p>
-      <p>Tinnenpotstraat 21 - Gent</p>
-    </div>
-    <div class="footer__info__social">
-      <p>Volg ons ook op</p>
-      <a href="https://www.facebook.com/Spekken/"><div class="footer__info__social__fb"></div></a>
-    </div>
-  </section>
-</footer>
-
 <svg class="filters">
   <defs>
-    <filter id="squiggly-0">
+    <filter id="shake-0">
       <feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/>
       <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6" />
     </filter>
-    <filter id="squiggly-1">
+    <filter id="shake-1">
       <feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="1"/>
 <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
     </filter>
 
-    <filter id="squiggly-2">
+    <filter id="shake-2">
       <feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/>
 <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
     </filter>
-    <filter id="squiggly-3">
+    <filter id="shake-3">
       <feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="3"/>
 <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
     </filter>
 
-    <filter id="squiggly-4">
+    <filter id="shake-4">
       <feTurbulence  baseFrequency="0.02" numOctaves="3" result="noise" seed="4"/>
 <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
     </filter>

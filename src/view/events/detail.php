@@ -3,7 +3,7 @@
     <a href="index.php?page=index"><img class="" src="assets/img/logo.png" alt="Logo Spekken"></a>
   </div>
   <ul class="nav__list">
-    <a class="nav__list__link nav__list__link--active" href="index.php?page=index">Home</a>
+    <a class="nav__list__link" href="index.php?page=index">Home</a>
     <a class="nav__list__link" href="index.php?page=program">Programma</a>
     <a class="nav__list__link" href="#">Over Spekken</a>
     <a class="nav__list__link" href="#">Tickets</a>
@@ -22,8 +22,8 @@
 <div class="detail detail--container">
   <div class="detail__title"><?php echo $event['title'];?></div>
   <picture>
-      <source class="detail__picture" type="image/webp" srcset="../../assets/img/<?php echo $event['id']?>.webp" alt="event picture">
-      <img class="detail__picture" src="../../assets/img/<?php echo $event['id']?>.jpg" width="100%" height="auto" alt="event picture">
+      <source class="detail__picture" type="image/webp" srcset="assets/img/<?php echo $event['id']?>.webp" alt="event picture">
+      <img class="detail__picture" src="assets/img/<?php echo $event['id']?>.jpg" width="100%" height="auto" alt="event picture">
   </picture>
   <div class="detail__information">
     <div class="detail__information__date">
@@ -58,15 +58,15 @@
   <div class="smaakmakers__flex">
     <?php echo '<a class="smaakmakers__eventbefore" href=index.php?page=detail&id=' . ($event['id'] -1). '>' ?>
       <picture>
-          <source class="smaakmakers__eventbefore__picture" type="image/webp" srcset="../../assets/img/<?php echo $eventbefore['id']?>.webp" alt="eventbefore">
-          <img class="smaakmakers__eventbefore__picture" src="../../assets/img/<?php echo $eventbefore['id']?>.jpg" alt="eventbefore">
+          <source class="smaakmakers__eventbefore__picture" type="image/webp" srcset="assets/img/<?php echo $eventbefore['id']?>.webp" alt="eventbefore">
+          <img class="smaakmakers__eventbefore__picture" src="assets/img/<?php echo $eventbefore['id']?>.jpg" alt="eventbefore">
       </picture>
     </a>
     <a href="index.php?page=program" class="smaakmakers__programm">Programma</a>
     <?php echo '<a class="smaakmakers__eventafter" href=index.php?page=detail&id=' . ($event['id'] +1). '>' ?>
       <picture>
-          <source class="smaakmakers__eventafter__picture" type="image/webp" srcset="../../assets/img/<?php echo $eventafter['id']?>.webp" alt="eventafter">
-          <img class="smaakmakers__eventafter__picture" src="../../assets/img/<?php echo $eventafter['id']?>.jpg" alt="eventafter">
+          <source class="smaakmakers__eventafter__picture" type="image/webp" srcset="assets/img/<?php echo $eventafter['id']?>.webp" alt="eventafter">
+          <img class="smaakmakers__eventafter__picture" src="assets/img/<?php echo $eventafter['id']?>.jpg" alt="eventafter">
       </picture>
     </a>
   </div>

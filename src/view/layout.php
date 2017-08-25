@@ -36,6 +36,28 @@
       <?php if(!empty($_SESSION['error'])): ?><div class="alert alert-danger"><?php echo $_SESSION['error'];?></div><?php endif; ?>
 
       <?php echo $content; ?>
+
+      <section class="partners">
+        <div class="partners__title">Onze Partners</div>
+        <ul class="partners__list">
+          <li><a href="http://www.gentsewinterfeesten.be/"><img class="partners__list__logo" src="assets/img/logo1.png" alt="logo gentse winterfeesten"></a></li>
+          <li><a href="https://freetime.be/"><img class="partners__list__logo" src="assets/img/logo2.png" alt="logo free time"></a></li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        <div class="spekken__topPattern"></div>
+        <section class="footer__info">
+          <div class="footer__info__location">
+            <p class="location__highlight">Festivallocatie</p>
+            <p>Tinnenpotstraat 21 - Gent</p>
+          </div>
+          <div class="footer__info__social">
+            <p>Volg ons ook op</p>
+            <a href="https://www.facebook.com/Spekken/"><div class="footer__info__social__fb"></div></a>
+          </div>
+        </section>
+      </footer>
     </div>
 
     <?php echo $js;?>

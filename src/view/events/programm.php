@@ -1,3 +1,18 @@
+<?php
+  date_default_timezone_set('Europe/Brussels');
+  $dateNow = date("Y-m-d H:i:s");
+  $dateEndChristmas = '2018-01-07 00:00:00';
+  $dateBeginEaster = '2018-04-2 00:00:00';
+  $christmas = false;
+  $easter = false;
+
+  if ($dateNow <= $dateEndChristmas){
+    $christmas = true;
+  } else {
+    $easter = true;
+  }
+?>
+
 <nav class="nav">
   <div class="nav__logo">
     <a href="index.php?page=index"><img class="" src="assets/img/logo.png" alt="Logo Spekken"></a>
@@ -21,6 +36,7 @@
 
 <section class="flex">
   <section class="filter">
+    <div class="filter__triangles"></div>
     <div class="filter__age">
       <div class="filter__age__title">Leeftijd:</div>
       <?php
@@ -29,26 +45,29 @@
       if (!empty($_GET['age'])) {
         $current_age = $_GET['age'];
       } else {
-        $current_age = 5;
+        $current_age = 0;
       }
 
       foreach($ages as $age) {
           if($age == $current_age) {
-              echo '<a class="age age--selected" href="index.php?page=program&amp;age='.$age.'"> '.$age.' </a> /';
+              echo '<a class="age age--selected" href="index.php?page=program&amp;age='.$age.'"> '.$age.' </a> / ';
             } else {
-              echo '<a class="age" href="index.php?page=program&amp;age='.$age.'"> '.$age.' </a> /';
+              echo '<a class="age" href="index.php?page=program&amp;age='.$age.'"> '.$age.' </a> / ';
           }
       }
       ?>
     </div>
     <div class="filter__period">
       <div class="filter__period__title">Periode:</div>
+
       <?php
       $periods = ["Kerstperiode", "Paasperiode"];
       if (!empty($_GET['period'])) {
         $current_period = $_GET['period'];
-      } else {
+      } else if ($christmas){
         $current_period = "Kerstperiode";
+      } else if ($easter) {
+        $current_period = "Paasperiode";
       }
 
       foreach($periods as $period) {

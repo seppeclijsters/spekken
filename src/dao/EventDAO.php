@@ -87,6 +87,13 @@ class EventDAO extends DAO {
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
+  public function selectFourItems() {
+    $sql = "SELECT * FROM `ma3_spekken_events` WHERE start >= NOW() LIMIT 4";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   private function _getEventIdsFromResult(&$result) {
     $eventIds = array();
     foreach($result as &$row) {
