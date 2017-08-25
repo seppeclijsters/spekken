@@ -14,42 +14,6 @@ class EventsController extends Controller {
   public function index() {
     $conditions = array();
 
-    if (!empty($_GET['period']) && $_GET['period'] == 'Kerstperiode') {
-      $conditions[] = array(
-        'field' => 'start',
-        'comparator' => '>=',
-        'value' => '2017-12-27 00:00:00'
-      );
-
-      $conditions[] = array(
-        'field' => 'start',
-        'comparator' => '<=',
-        'value' => '2018-01-06 23:59:59'
-      );
-    }
-
-
-    // if (empty($_GET['age']) && empty($_GET['period'])) {
-    //   date_default_timezone_set('Europe/Brussels');
-    //   $dateNow = date("Y-m-d H:i:s");
-    //   $dateEndChristmas = '2018-01-07 00:00:00';
-    //   $dateBeginEaster = '2018-04-2 00:00:00';
-    //
-    //   if ($dateNow <= $dateEndChristmas) {
-    //     $conditions[] = array(
-    //       'field' => 'start',
-    //       'comparator' => '<=',
-    //       'value' => $dateEndChristmas
-    //     );
-    //   } else {
-    //     $conditions[] = array(
-    //       'field' => 'start',
-    //       'comparator' => '>=',
-    //       'value' => $dateBeginEaster
-    //     );
-    //   }
-    // }
-
     $events = $this->eventDAO->search($conditions);
     $this->set('events', $events);
 

@@ -1,16 +1,16 @@
 <?php
 class DAO {
-  private static $dbHost = "localhost";
-  private static $dbName = "ma3_spekken";
-  private static $dbUser = "root";
-  private static $dbPass = "root";
-  private static $sharedPDO;
+  // private static $dbHost = "localhost";
+  // private static $dbName = "ma3_spekken";
+  // private static $dbUser = "root";
+  // private static $dbPass = "root";
+  // private static $sharedPDO;
 
-  // private static $dbHost = "mysqlstudent";
-	// private static $dbName = "seppeclijshiet3u";
-	// private static $dbUser = "seppeclijshiet3u";
-	// private static $dbPass = "ouph8EoZ3Aiw";
-	// private static $sharedPDO;
+  private static $dbHost = "mysqlstudent";
+	private static $dbName = "seppeclijshiet3u";
+	private static $dbUser = "seppeclijshiet3u";
+	private static $dbPass = "ouph8EoZ3Aiw";
+	private static $sharedPDO;
 
   protected $pdo;
 
